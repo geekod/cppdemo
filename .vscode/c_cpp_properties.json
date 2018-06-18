@@ -24,6 +24,26 @@
             ]
         },
         {
+            "name": "Cygwin64",
+            "includePath": [
+                "C:/cygwin64/usr/include",
+                "${workspaceFolder}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/cygwin64/bin/gcc.exe",
+            "browse": {
+                "path": [
+                    "C:/cygwin64/usr/include",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
             "name": "MinGW",
             "includePath": [
                 "C:/mingw/include",
