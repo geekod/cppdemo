@@ -37,16 +37,17 @@ public:
         return p;
     }
 
+private:
     /**
      * define a recursive add func for l1 node, l2 node and carry number
      */
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2, int carry_number) {
-        int val = (l1 == NULL ? 0 : l1->val) + (l2 ==NULL ? 0 : l2->val) + carry_number;
-        if (val == 0) {
+        if (carry_number == 0 && l1 == NULL && l2 == NULL) {
             return NULL;
         }
 
         // recursive add children
+        int val = (l1 == NULL ? 0 : l1->val) + (l2 ==NULL ? 0 : l2->val) + carry_number;
         ListNode* p = new ListNode(val % 10);
         p->next = addTwoNumbers(l1 == NULL ? NULL : l1->next, l2 == NULL ? NULL : l2->next, val / 10);
         return p;
@@ -88,9 +89,11 @@ void dump(ListNode* list) {
 
 int main() {
     // init question
-    std::vector<int> vec1 = {2, 4, 3};
+    std::vector<int> vec1 = {1,6,0,3,3,6,7,2,0,1};
+    //{2, 4, 3};
     l002::ListNode* l1 = l002::vectorToListNode(vec1);
-    std::vector<int> vec2 = {5, 6, 4};
+    std::vector<int> vec2 = {6,3,0,8,9,6,6,9,6,1};
+    //{5, 6, 4};
     l002::ListNode* l2 = l002::vectorToListNode(vec2);
 
     // print the question
