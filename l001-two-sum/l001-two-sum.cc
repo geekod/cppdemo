@@ -30,7 +30,7 @@ public:
             // find the counter_part of the sum from the map
             const auto it = num_index_map.find(counter_part);
             if (it != num_index_map.end()) {
-                const std::vector<unsigned int> ret = {(it->second), i};
+                const std::vector<unsigned int> ret{(it->second), i};
                 return ret;
             } 
 
@@ -38,7 +38,7 @@ public:
             num_index_map[nums[i]] = i;
         } 
 
-        const std::vector<unsigned int> ret = {0, 0}; 
+        const std::vector<unsigned int> ret{0, 0}; 
         return ret;
     }
 
@@ -46,13 +46,13 @@ public:
         for (unsigned int i = 0; i < nums.size(); ++i) {
             for (unsigned int j = i + 1; j < nums.size(); ++j) {
                 if (nums[i] + nums[j] == target) {
-                    const std::vector<unsigned int> ret = {i, j};
+                    const std::vector<unsigned int> ret{i, j};
                     return ret;
                 }
             }
         } 
 
-        const std::vector<unsigned int> ret = {0, 0};
+        const std::vector<unsigned int> ret{0, 0};
         return ret;
     }
 };
@@ -70,7 +70,7 @@ void dump(const std::vector<unsigned int>& vec) {
 
 int main() {
     // init question
-    std::vector<unsigned int> nums = {2, 7, 11, 15};
+    std::vector<unsigned int> nums{2, 7, 11, 15};
     unsigned int target = 9;
 
     // print the question
