@@ -18,8 +18,10 @@ public:
 public:
     int lengthOfLongestSubstring(std::string s) {
         auto substr_info = iter_sub_strings(s);
-        std::string sub_s = s.substr(substr_info[1], substr_info[0]);
-        std::cout << sub_s;
+        std::string sub_s = s.substr(substr_info[0], substr_info[1] - substr_info[0]);
+        std::cout << sub_s << " ";
+        for (auto i : substr_info)
+            std::cout << i << " ";
         return sub_s.size();
     }
     
@@ -28,7 +30,7 @@ public:
         for (int i = 0; i < s.size(); ++i) {
             for (int j = i + 1; j < s.size(); ++j) {
                 auto substr_info = calc_repeats(s, i, j);
-                if (substr_info[2] == 0 && substr_info[1] - substr_info[0] > longest_substr_info[1] - longest_substr_info[0]) {
+                if (substr_info[2] > 0 && substr_info[1] - substr_info[0] > longest_substr_info[1] - longest_substr_info[0]) {
                     longest_substr_info = substr_info;
                 }
             }
